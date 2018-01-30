@@ -1,0 +1,6 @@
+<div 
+*ngFor="let c of colors" 
+class="color_editor__color {{c}}" 
+[class.chosen]="defaultColor === c" 
+(click)="chooseColor( c )">
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  <form class="col s12" #formCtrl="ngForm">
+    <div class="row">
+      <div class="input-field col s6">
+        <input #noteTitle placeholder="Title" type="text" data-length="10" [(ngModel)]="noteTitleModel" name="noteTitle" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea #noteDescr placeholder="Description" data-length="120" [(ngModel)]="noteDescrModel" name="noteDescr" required></textarea>
+      </div>
+    </div>
+<button class="waves-effect waves-light btn" (click)="addNote(noteTitle, noteDescr)" [disabled]="!formCtrl.form.valid">Send</button>
+
+  </form>
+</div>
+

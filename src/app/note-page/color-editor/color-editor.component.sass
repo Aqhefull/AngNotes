@@ -1,0 +1,21 @@
+.color_editor
+  &__color
+      display: inline-block
+      width: 25px
+      height: 25px
+      border-radius: 50%
+      border: 2px solid transparentize(#000, .7)
+      cursor: pointer
+      margin: 0 5px
+      position: relative
+.chosen
+  &:after
+      content: ''
+      position: absolute
+      top: 25%
+      left: 25%
+      width: 50%
+      height: 50%
+      border-radius: 50%
+      background-color: transparentize(#546e7a, .5)
+      border: 2px solid transparentize(#546e7a, .5)

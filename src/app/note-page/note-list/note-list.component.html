@@ -1,0 +1,6 @@
+<div class="row">
+<div *ngIf="error" class="card-panel red darken-2 white-text"> {{ error }} </div>
+    <app-note class="col s12 m6" (onRmNote)="superRemoveNote($event)" *ngFor="let note of notes; let i = index" [note]="note" [i]="i"></app-note>
+</div>
+
+
