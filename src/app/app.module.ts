@@ -13,6 +13,9 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { HoverNoteDirective } from './_directives/hover-note.directive';
 import { HoverNoteColorDirective } from './_directives/hover-note-color.directive';
 import { ColorEditorComponent } from './note-page/color-editor/color-editor.component';
+import { AccSidebarComponent } from './dashboard-page/acc-sidebar/acc-sidebar.component';
+import { DashContentComponent } from './dashboard-page/dash-content/dash-content.component';
+import { DashContentNotesComponent } from './dashboard-page/dash-content/dash-content-notes/dash-content-notes.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { ColorEditorComponent } from './note-page/color-editor/color-editor.comp
     HoverNoteColorDirective,
     NoteFormComponent,
     ColorEditorComponent,
-    NoteListComponent
+    NoteListComponent,
+    AccSidebarComponent,
+    DashContentComponent,
+    DashContentNotesComponent
   ],
   imports: [
     BrowserModule,

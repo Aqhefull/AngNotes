@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ang-learn App', () => {
+describe('ang-notes App', () => {
   let page: AppPage;
 
   beforeEach(() => {
