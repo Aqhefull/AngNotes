@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class NoteSerService {
   notes = [];
+  numberOfNotes: number;
   NoteInterface: NoteInterface[] = [];
   colors = ['white', 'red', 'green', 'blue', 'orange'];
   constructor(private http: Http, private db: AngularFireDatabase) {}
@@ -21,6 +22,10 @@ export class NoteSerService {
         return Observable.throw('Sorry, but server is not available');
       });
   }
+  getNumberOfNotes() {
+    return this.db.list('notes').snapshotChanges();
+  }
+
   addNote(note) {
     this.db.list('notes').snapshotChanges().subscribe();
     const sendNote = this.db.list('notes').push(note);

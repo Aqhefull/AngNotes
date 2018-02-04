@@ -11,14 +11,11 @@ export class DashContentNotesComponent implements OnInit {
   constructor(private notesService: NoteSerService) {}
 
   ngOnInit() {
-    this.getNotesNumber();
+    this.getNumberOfNotes();
   }
-  getNotesNumber() {
-    this.notesService.getNotes();
-        // .subscribe((notes) => {
-        //   this.notesService.notes = notes;
-        //   this.numberOfNotes = this.notesService.notes.length;
-        //   return this.numberOfNotes;
-        // });
+  getNumberOfNotes() {
+    this.notesService.getNumberOfNotes().subscribe(items => {
+      this.numberOfNotes = items.length;
+    });
   }
 }
