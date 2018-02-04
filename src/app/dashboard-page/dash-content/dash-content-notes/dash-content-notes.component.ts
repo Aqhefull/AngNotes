@@ -14,11 +14,11 @@ export class DashContentNotesComponent implements OnInit {
     this.getNotesNumber();
   }
   getNotesNumber() {
-    this.notesService.getNotes()
-        .subscribe((notes) => {
-          this.notesService.notes = notes;
-          this.numberOfNotes = this.notesService.notes.length;
-          return this.numberOfNotes;
-        });
+    this.notesService.getNotes();
+        // .subscribe((notes) => {
+        //   this.notesService.notes = notes;
+        //   this.numberOfNotes = this.notesService.notes.length;
+        //   return this.numberOfNotes;
+        // });
   }
 }

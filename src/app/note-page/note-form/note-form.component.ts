@@ -20,14 +20,7 @@ export class NoteFormComponent implements OnInit {
       descr: noteDescr.value,
       color: this.color
     };
-    this.notesService.addNote(newNote)
-      .subscribe((note: NoteInterface) => {
-        this.notesService.notes.push(note);
-    },
-    (error) => {
-      this.error = error;
-    }
-  );
+    this.notesService.addNote(newNote);
     noteTitle.value = '';
     noteDescr.value = '';
   }

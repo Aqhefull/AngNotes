@@ -1,4 +1,7 @@
+import { environment } from './../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NoteSerService } from './_services/note-ser.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -37,7 +40,9 @@ import { DashContentNotesComponent } from './dashboard-page/dash-content/dash-co
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [NoteSerService],
   bootstrap: [AppComponent]

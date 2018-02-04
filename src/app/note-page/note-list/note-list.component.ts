@@ -1,6 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { NoteSerService } from '../../_services/note-ser.service';
-import { NoteInterface } from '../../_interfaces/note';
 
 @Component({
   selector: 'app-note-list',
@@ -8,7 +7,7 @@ import { NoteInterface } from '../../_interfaces/note';
   styleUrls: ['./note-list.component.sass'],
 })
 export class NoteListComponent implements OnInit {
-  notes: NoteInterface[] = [];
+  notes = [];
   error: string;
   constructor(private notesService: NoteSerService) { }
 
@@ -18,10 +17,9 @@ export class NoteListComponent implements OnInit {
 
   getNotes() {
       this.notesService.getNotes()
-        .subscribe((notes: NoteInterface[]) => {
-          this.notesService.notes = notes;
-          this.notes = this.notesService.notes;
-          return this.notes;
+        .subscribe((notes) => {
+        this.notes = notes;
+        return this.notes;
         },
         (error) => {
           this.error = error;
@@ -29,7 +27,6 @@ export class NoteListComponent implements OnInit {
   }
 
   superRemoveNote(newlist) {
-    this.notes = this.notes.filter(n => n.id !== newlist.id);
     this.getNotes();
   }
 }
