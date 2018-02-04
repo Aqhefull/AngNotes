@@ -40,4 +40,8 @@ export class NoteSerService {
     this.db.list('notes').snapshotChanges().subscribe();
     this.db.list('notes').remove(note.id);
   }
+  removeAllNotes() {
+    this.db.list('notes').snapshotChanges().subscribe();
+    this.db.list('notes').remove();
+  }
 }

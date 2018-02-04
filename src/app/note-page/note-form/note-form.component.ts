@@ -27,4 +27,7 @@ export class NoteFormComponent implements OnInit {
   chooseColor( c ) {
     this.color = c;
   }
+  removeAllNotes() {
+    this.notesService.removeAllNotes();
+  }
 }
