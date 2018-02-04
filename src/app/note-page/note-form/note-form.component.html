@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="control-btns">
-      <button class="waves-effect waves-light pulse btn" (click)="addNote(noteTitle, noteDescr)" [disabled]="!formCtrl.form.valid">Send</button>
+      <button class="waves-effect waves-light btn" [ngClass]="{ 'pulse': checkBtnValid(formCtrl.form.valid) }" (click)="addNote(noteTitle, noteDescr)" [disabled]="!formCtrl.form.valid">Send</button>
       <a class="waves-effect waves-light btn" (click)="removeAllNotes()"><i class="material-icons right">close</i>Delete All</a>
     </div>
   </form>

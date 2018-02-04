@@ -30,4 +30,7 @@ export class NoteFormComponent implements OnInit {
   removeAllNotes() {
     this.notesService.removeAllNotes();
   }
+  checkBtnValid(status) {
+    return status;
+  }
 }
