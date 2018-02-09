@@ -1,19 +1,37 @@
 <div class="row">
-  <form class="col s12" #formCtrl="ngForm">
+  <form class="col s12 m6" [formGroup]="form">
     <div class="row">
       <div class="input-field col s6">
-        <input #noteTitle placeholder="Title" type="text" data-length="10" ngModel name="noteTitle" required>
+        <input type="text" data-length="10" formControlName="noteTitle" required>
+        <label for="noteTitle" *ngIf="!form.get('noteTitle').valid">Your Title</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <textarea #noteDescr placeholder="Description" data-length="120" ngModel name="noteDescr" required></textarea>
+        <textarea class="materialize-textarea" data-length="120" formControlName="noteDescr" required></textarea>
+        <label for="noteDescr" *ngIf="!form.get('noteDescr').valid">Your Description</label>
       </div>
     </div>
     <div class="control-btns">
-      <button class="waves-effect waves-light btn" [ngClass]="{ 'pulse': checkBtnValid(formCtrl.form.valid) }" (click)="addNote(noteTitle, noteDescr); formCtrl.form.reset()" [disabled]="!formCtrl.form.valid">Send</button>
+      <button class="waves-effect waves-light btn" [ngClass]="{ 'pulse': checkBtnValid(form.valid) }" (click)="addNote(form.get('noteTitle'), form.get('noteDescr')); form.reset()" [disabled]="!form.valid">Send</button>
       <a class="waves-effect waves-light btn" (click)="removeAllNotes()"><i class="material-icons right">close</i>Delete All</a>
     </div>
   </form>
+    <div class="col s12 m6">
+      <div class="card grey darken-2">
+        <div class="card-content white-text">
+          <span class="card-title">Hi! Welcome to <b>AngNotes</b></span>
+          <p>I am Alexander Komarevych and this is my first Angular App. App will be push your Notes to Firebase Database and save them.
+            If you have any questions please contact me :)
+          </p>
+        </div>
+        <div class="card-action">
+          <div class="chip">
+            <img src="https://avatars3.githubusercontent.com/u/18403084?s=40&v=4" alt="Contact Person"> Alexander Komarevych
+          </div>
+          <a class="grey-text text-lighten-5" target="_blank" href="https://github.com/Aqhefull">Github</a><a class="blue-text text-lighten-1" target="_blank" href="https://twitter.com/lucky_koma">Twitter</a>
+        </div>
+      </div>
+    </div>
 </div>
 
