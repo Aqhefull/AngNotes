@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { MasonryModule } from 'angular2-masonry';
 import { AppComponent } from './app.component';
 import { NotePageComponent } from './note-page/note-page.component';
 import { NoteComponent } from './note-page/note/note.component';
@@ -30,6 +32,7 @@ import { ColorEditorComponent } from './note-page/color-editor/color-editor.comp
   ],
   imports: [
     BrowserModule,
+    MasonryModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
